@@ -1,0 +1,94 @@
+ <!--
+Week of October 26.
+Lab Activity: Interactive Task Manager (To-Do List)
+Web Programming — Course Lab Assignment
+Due: Week of Nov. 2nd, 2026
+Objective
+Build a persistent, interactive **Task Manager Web Application** using semantic **HTML5**,
+modern **CSS3**, and **Vanilla JavaScript**. You will practice capturing user interactions 
+via **Events and Event Handlers**, organizing application logic with **Functions**, and 
+managing client-side data persistence using **JSON** and **localStorage**.
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Task Manager</title>
+    <link rel="stylesheet" href="Personal Task Manager style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>MY TASKS </h1>
+      <p>Manage your daily activities seamlessly</p>
+    </header>
+
+    <main>
+      <!-- Form Section to Add Tasks -->
+      <section class="form-section">
+        <h2>Add a New Task</h2>
+        
+        <form id="task-form">
+          <div class="TaskNameInput">
+            <label for="TaskNameInput">Task Name</label>
+            <input type="text" id="TaskName" placeholder="Give the task a name" required/>
+          </div>
+          <br>
+          <div class="input-group">
+            <label for="tasktitle">Task Description</label>
+            <input
+              type="text"
+              id="tasktitle"
+              placeholder="e.g., Study for Web Exam"
+              required
+            />
+          </div>
+          
+          <div class="Duration-input">
+            <label for="TaskTime "> Task Duration</label>
+            <select id="TaskTime", placeholder="Select Duration">
+              <option value= ""></option>
+              <option value="30m">30 minutes</option>
+              <option value="1Hr">1 Hour</option>
+              <option value="1Hr30m"> 1 Hour 30 minutes</option>
+              <option value="2Hr">2 Hours</option>
+              <option value="2Hr30m"> 2 Hours 30 minutes</option>
+              <option value="3Hr">3 Hours</option>
+              <option value="Morethan3Hr">>3Hours</option>
+            </select>
+          </div>
+          <br>
+
+          <div class="input-group">
+            <label for="taskpriority" >Priority</label>
+            <select id="taskpriority">
+              <option value= ""></option>
+              <option value="low">Low Priority</option>
+              <option value="medium">Medium Priority</option>
+              <option value="high">High Priority</option>
+            </select>
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="isComplete"/>
+            <label for="isComplete"> Mark as Complete</label>
+          </div>
+
+
+          <button type="submit" id="add-btn">Add Task</button>
+        </form>
+      </section>
+
+      <!-- Display Section for Registered Tasks -->
+      <section class="Task-Priority-List">
+        <h2>The Task Listing</h2>
+        <input type="text" id="search-bar" placeholder=" Search for task by name..." size="80"/>
+        <div id="tasklistcontainer" class="task-grid" style="border-color: blueviolet;">
+          <!-- Dynamically generated task items will go here -->
+        </div>
+      </section>
+    </main>
+
+    <script src="Personal Task Manager.js"></script>
+  </body>
+</html>
